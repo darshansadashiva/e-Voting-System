@@ -55,6 +55,7 @@
                   <th>Firstname</th>
                   <th>Photo</th>
                   <th>Voters ID</th>
+                  <th>Mobile Number</th>
                   <th>Tools</th>
                 </thead>
                 <tbody>
@@ -72,6 +73,7 @@
                             <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['id']."'><span class='fa fa-edit'></span></a>
                           </td>
                           <td>".$row['voters_id']."</td>
+                          <td>".$row['mobile_number']."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
@@ -128,6 +130,7 @@ function getRow(id){
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
       $('#edit_password').val(response.password);
+      $('#edit_mobileNum').val(response.mobile_number);
       $('.fullname').html(response.firstname+' '+response.lastname);
     }
   });

@@ -14,7 +14,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   	<div class="login-logo">
-  		<h1><p><b>Decentraised Voting System for Organization</b></p></h1>
+  		<h1><p><b>Welcome to e-Voting System</b></p></h1>
   	</div>
   
   	<div class="login-box-body">

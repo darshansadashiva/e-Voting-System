@@ -31,6 +31,13 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="mobile_number" class="col-sm-3 control-label">Mobile Number</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="mobile_number" name="mobile_number" required>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 
                     <div class="col-sm-9">
@@ -78,6 +85,13 @@
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" id="edit_password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit_mobileNum" class="col-sm-3 control-label">Mobile Number</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_mobileNum" name="mobile_number">
                     </div>
                 </div>
             </div>

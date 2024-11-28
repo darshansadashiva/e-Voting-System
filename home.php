@@ -172,7 +172,7 @@ $(function() {
 
     // Timer for redirecting after 2 minutes (120 seconds)
     var timerInterval;
-    var timeLeft = 30; // 2 minutes in seconds
+    var timeLeft = 180; // 2 minutes in seconds
 
     function startTimer() {
         timerInterval = setInterval(function() {
@@ -183,7 +183,7 @@ $(function() {
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 console.log("Redirecting..."); // Debugging output
-                window.location.href = 'http://localhost/votesystem/logout.php';
+                window.location.href = 'http://localhost/smartballot/logout.php';
             }
         }, 1000); // Update every second
     }

@@ -5,9 +5,10 @@ if (isset($_POST['edit'])) {
     $id = $_POST['id'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    $password = $_POST['password']; // Save as plain text
+    $mobile_number = isset($_POST['mobile_number']) ? $_POST['mobile_number'] : ''; // Default to empty string if not set
+    $password = $_POST['password'];
 
-    // Prepare the SQL statement to prevent SQL injection
+    // Retrieve the existing password
     $stmt = $conn->prepare("SELECT password FROM voters WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -15,18 +16,14 @@ if (isset($_POST['edit'])) {
     $stmt->fetch();
     $stmt->close();
 
-    // Check if the password is correct
-    if ($password === $existingPassword) {
-        // If the password matches, keep the existing password (plain text)
-        $password = $existingPassword;
-    } else {
-        // If the password does not match, save the new password as plain text
-        // Note: You may want to add additional logic here to handle password changes
+    // Check if a new password was provided or keep the existing password
+    if (empty($password)) {
+        $password = $existingPassword; // Keep the existing password if no new password is provided
     }
 
     // Prepare the update statement
-    $stmt = $conn->prepare("UPDATE voters SET firstname = ?, lastname = ?, password = ? WHERE id = ?");
-    $stmt->bind_param("sssi", $firstname, $lastname, $password, $id); // Bind parameters
+    $stmt = $conn->prepare("UPDATE voters SET firstname = ?, lastname = ?, password = ?, mobile_number = ? WHERE id = ?");
+    $stmt->bind_param("ssssi", $firstname, $lastname, $password, $mobile_number, $id); // Bind parameters
 
     if ($stmt->execute()) {
         $_SESSION['success'] = 'Voter updated successfully';
