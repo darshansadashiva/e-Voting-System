@@ -105,7 +105,8 @@ CREATE TABLE `voters` (
   `password` varchar(60) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
-  `photo` varchar(150) NOT NULL
+  `photo` varchar(150) NOT NULL,
+  `mobile_number` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
